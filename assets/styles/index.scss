@@ -1,1 +1,33 @@
 @import '~bootstrap/scss/bootstrap';
+
+h1 {
+  text-align: center;
+}
+
+#signup-btn {
+  display: block;
+  text-align: center;
+}
+
+#login-btn {
+  display: block;
+  text-align: center;
+}
+
+#sign-up {
+  display: none;
+  text-align: center;
+}
+
+#log-in {
+  display: none;
+  text-align: center;
+}
+
+#change-password {
+  display: none;
+}
+
+#log-out {
+  display: none;
+}
