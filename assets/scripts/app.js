@@ -9,12 +9,19 @@ const logic = require('./logic/events.js')
 // require('./example')
 
 $(() => {
-  // your JS code goes here
+  // Auth buttons
   $('#sign-up').on('submit', logic.onSignUp)
   $('#log-in').on('submit', logic.onLogIn)
   $('#change-password').on('submit', logic.onChangePassword)
   $('#log-out').on('submit', logic.onLogOut)
-
-  $('#signup-btn').on('click', logic.signUpBtn)
   $('#login-btn').on('click', logic.logInBtn)
+  $('#create-btn').on('click', logic.createBtn)
+
+  // Build-related buttons
+  $('#create-build-form').on('submit', logic.onCreateBuild)
+  $('#create-part-form').on('submit', logic.onCreatePart)
+
+  // Retrieve via Handlebars
+  logic.addHandlers()
+  $('.delete-build').on('click', logic.onDeleteBuild)
 })

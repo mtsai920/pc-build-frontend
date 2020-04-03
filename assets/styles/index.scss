@@ -1,21 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 
-h1 {
-  text-align: center;
-}
-
-#signup-btn {
-  display: block;
-  text-align: center;
-}
-
 #login-btn {
   display: block;
-  text-align: center;
-}
-
-#sign-up {
-  display: none;
   text-align: center;
 }
 
@@ -28,6 +14,41 @@ h1 {
   display: none;
 }
 
-#log-out {
+#create {
   display: none;
+}
+
+#log-out {
+  bottom: 10px;
+  left: 30px;
+  padding: 10px;
+  position: absolute;
+}
+
+#create-parts {
+  display: none;
+}
+
+.navbar {
+  padding: 45px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  width: auto;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.copyright {
+  bottom: 10px;
+  position: absolute;
+  right: 30px;
 }

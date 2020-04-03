@@ -41,9 +41,62 @@ const logOut = function (data) {
   })
 }
 
+const createBuild = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/builds',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const retrieveParts = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/parts',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const createPart = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/parts',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const retrieveBuilds = function () {
+  return $.ajax({
+    url: config.apiUrl + '/builds',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+// const deleteBuild = function () {
+//   return $.ajax({
+//     url: config.apiUrl + '/builds' + ``
+//   })
+// }
+
 module.exports = {
   signUp,
   logIn,
   changePassword,
-  logOut
+  logOut,
+  createBuild,
+  retrieveParts,
+  createPart,
+  retrieveBuilds
 }

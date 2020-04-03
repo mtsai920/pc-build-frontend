@@ -12,18 +12,44 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>PC Build Tracker</h1>
 
-    <div id="signup-btn">
-      <button>Sign Up</button>
-    </div>
+      <!-- Navigation Bar -->
+
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">PC Build Tracker</a>
+        <!-- <a class="navbar-right">Build and Keep Track of your Ultimate PC.</a> -->
+      </nav>
+
+    <!-- Auth Information -->
+
+    <p class="message"></p>
+
     <form id="sign-up">
+      <p id="sign-up-text">Sign Up</p>
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+        </div>
+        <div class="col">
+          <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+        </div>
+        <div class="col">
+          <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password">
+        </div>
+        <div class="col">
+          <input type="submit" value="Sign Up">
+          <!-- <button type="button" class="btn btn-primary">Primary</button> -->
+        </div>
+      </div>
+    </form>
+
+    <!-- <form id="sign-up">
       <h4>Sign Up</h4>
     <input type="text" name="credentials[email]" placeholder="email">
     <input type="password" name="credentials[password]" placeholder="password">
     <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
     <input type="submit" value="Sign Up">
-    </form>
+    </form> -->
 
     <div id="login-btn">
       <button>Log In</button>
@@ -42,15 +68,58 @@
       <input type="submit" value="Change password">
     </form>
 
-    <form id="log-out">
-      <input type="submit" value="Log Out">
-    </form>
+    <!-- Homepage Info -->
 
     <p class="home"></p>
 
-    <div class="copyright">
-      <p>2020 | <a href="https://www.linkedin.com/in/meganktsai/">Megan Tsai</a></p>
+    <div id="create-btn">
+      <button>Create New Build</button>
     </div>
+    <form id="create-build-form">
+      <input type="text" name="build[name]" placeholder="Build Name">
+      <input type="text" name="build[description]" placeholder="Build Description">
+      <input type="text" name="build[budget]" placeholder="Budget">
+      <input type="submit" value="Create Build">
+    </form>
+
+    <!-- Retrieve Builds -->
+
+    <form id="retrieve-builds">
+      <input type="submit" value="See All Builds">
+    </form>
+
+    <p class="home-builds"></p>
+
+    <!-- Parts Form -->
+
+    <p class="home-parts"></p>
+
+    <div id="create-parts">
+      <h4 id="create-parts-header">Add a New Part</h4>
+      <form id="create-part-form">
+        <input type="text" name="part[name]" placeholder="Part Name">
+        <input type="text" name="part[part_type]" placeholder="Part Type">
+        <input type="text" name="part[description]" placeholder="Part Description">
+        <input type="text" name="part[cost]" placeholder="Cost">
+        <input type="text" name="part[build_id]" placeholder="Build Number">
+        <input type="submit" value="Add Part">
+      </form>
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+      <div class="bottom">
+        <form id="log-out">
+          <input type="submit" value="Log Out">
+        </form>
+
+        <div class="copyright">
+          <p>2020 | <a href="https://www.linkedin.com/in/meganktsai/">Megan Tsai</a></p>
+        </div>
+      </div>
+    </footer>
 
     </body>
 

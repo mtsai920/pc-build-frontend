@@ -1,0 +1,13 @@
+{{#each builds as |builds|}}
+  {{log builds}}
+  <section data-id="{{builds.id}}">
+    <h6>Name:</h6>
+    <p>{{builds.name}}</p>
+    <h6>Description:</h6>
+    <p>{{builds.description}}</p>
+    <h6>Budget:</h6>
+    <p>{{builds.budget}}</p>
+    <button data-id="{{builds.id}}" class="delete-build">Delete</button>
+  </section>
+
+{{/each}}

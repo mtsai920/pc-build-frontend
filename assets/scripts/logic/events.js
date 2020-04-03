@@ -6,11 +6,6 @@ const ui = require('./ui')
 
 const api = require('./api')
 
-const signUpBtn = function (event) {
-  event.preventDefault()
-  $('#sign-up').show()
-}
-
 const logInBtn = function (event) {
   event.preventDefault()
   $('#log-in').show()
@@ -42,13 +37,50 @@ const onChangePassword = function (event) {
 
 const onLogOut = function (event) {
   event.preventDefault()
-  const signInText = document.getElementById('sign-in')
-  signInText.reset()
-  const signUpText = document.getElementById('sign-up')
-  signUpText.reset()
   api.logOut()
     .then(ui.logOutSuccess)
     .catch(ui.logOutFailure)
+}
+
+const createBtn = function (event) {
+  event.preventDefault()
+  $('#create').show()
+}
+
+const onCreateBuild = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.createBuild(data)
+    .then(ui.createBuildSuccess)
+    .catch(ui.createBuildFailure)
+}
+
+const onCreatePart = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.createPart(data)
+    .then(ui.createPartSuccessful)
+    .catch(ui.createPartFailure)
+}
+
+const onRetrieveBuilds = function (event) {
+  event.preventDefault()
+  api.retrieveBuilds()
+    .then(ui.retrieveBuildsSuccessful)
+    .catch(ui.retrieveBuildsFailure)
+}
+
+const addHandlers = () => {
+  $('#retrieve-builds').on('submit', onRetrieveBuilds)
+}
+
+const onDeleteBuild = function (event) {
+  event.preventDefault()
+  api.deleteBuild()
+    .then(ui.deleteBuildSuccessful)
+    .catch(ui.deleteBuildFailure)
 }
 
 module.exports = {
@@ -56,6 +88,11 @@ module.exports = {
   onLogIn,
   onChangePassword,
   onLogOut,
-  signUpBtn,
-  logInBtn
+  logInBtn,
+  createBtn,
+  onCreateBuild,
+  onCreatePart,
+  onRetrieveBuilds,
+  onDeleteBuild,
+  addHandlers
 }
