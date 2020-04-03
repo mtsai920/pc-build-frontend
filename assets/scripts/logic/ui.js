@@ -75,15 +75,23 @@ const createPartFailure = function () {
 }
 
 const retrieveBuildsSuccessful = function (data) {
-  $('.home-builds').text(`You have created ${data.builds.length} builds`)
+  $('.home-builds').text(`You have ${data.builds.length} builds`)
   const retrieveBuildsHtml = retrieveBuildsTemplate({ builds: data.builds })
-  $('.home-builds').html(retrieveBuildsHtml)
-  console.log(data)
+  $('.home-builds').append(retrieveBuildsHtml)
+  // console.log(data)
 }
 
 const retrieveBuildsFailure = function (data) {
   console.log(data)
   console.log('failed to retrieve builds')
+}
+
+const deleteBuildSuccessful = function () {
+  console.log('deleted!')
+}
+
+const deleteBuildFailure = function () {
+  console.log('did not delete')
 }
 
 module.exports = {
@@ -102,5 +110,7 @@ module.exports = {
   createPartSuccessful,
   createPartFailure,
   retrieveBuildsSuccessful,
-  retrieveBuildsFailure
+  retrieveBuildsFailure,
+  deleteBuildSuccessful,
+  deleteBuildFailure
 }

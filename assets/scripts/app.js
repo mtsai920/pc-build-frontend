@@ -20,8 +20,8 @@ $(() => {
   // Build-related buttons
   $('#create-build-form').on('submit', logic.onCreateBuild)
   $('#create-part-form').on('submit', logic.onCreatePart)
+  $('#delete-build').on('submit', logic.onDeleteBuild)
 
   // Retrieve via Handlebars
   logic.addHandlers()
-  $('.delete-build').on('click', logic.onDeleteBuild)
 })

@@ -84,11 +84,15 @@ const retrieveBuilds = function () {
   })
 }
 
-// const deleteBuild = function () {
-//   return $.ajax({
-//     url: config.apiUrl + '/builds' + ``
-//   })
-// }
+const deleteBuild = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/builds/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   signUp,
@@ -98,5 +102,6 @@ module.exports = {
   createBuild,
   retrieveParts,
   createPart,
-  retrieveBuilds
+  retrieveBuilds,
+  deleteBuild
 }

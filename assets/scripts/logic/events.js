@@ -72,15 +72,17 @@ const onRetrieveBuilds = function (event) {
     .catch(ui.retrieveBuildsFailure)
 }
 
-const addHandlers = () => {
-  $('#retrieve-builds').on('submit', onRetrieveBuilds)
-}
-
 const onDeleteBuild = function (event) {
   event.preventDefault()
-  api.deleteBuild()
+  const id = $(event.target).data('id')
+  console.log(id)
+  api.deleteBuild(id)
     .then(ui.deleteBuildSuccessful)
     .catch(ui.deleteBuildFailure)
+}
+
+const addHandlers = () => {
+  $('#retrieve-builds').on('submit', onRetrieveBuilds)
 }
 
 module.exports = {

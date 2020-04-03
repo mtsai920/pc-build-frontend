@@ -56,8 +56,8 @@
     </div>
     <form id="log-in">
       <h4>Log In</h4>
-      <input type="text" name="credentials[email]" placeholder="email">
-      <input type="password" name="credentials[password]" placeholder="password">
+      <input type="text" class="form-control" name="credentials[email]" placeholder="email">
+      <input type="password" class="form-control" name="credentials[password]" placeholder="password">
       <input type="submit" value="Log In">
     </form>
 
@@ -88,7 +88,12 @@
       <input type="submit" value="See All Builds">
     </form>
 
-    <p class="home-builds"></p>
+    <div class="home-builds"></div>
+
+    <form id="delete-build">
+      <input type="text" name="deleteBuildId" placeholder="Build ID">
+      <input type="submit" value="Delete Build">
+    </form>
 
     <!-- Parts Form -->
 
@@ -105,6 +110,10 @@
         <input type="submit" value="Add Part">
       </form>
     </div>
+
+    <!-- <div id="retrieve-parts">
+      <form id=
+    </div> -->
 
 
     <!-- Footer -->
