@@ -1,45 +1,50 @@
 {{#each builds as |builds|}}
   {{!log builds}}
-  <section data-id="{{builds.id}}">
-    <h6>Name:</h6>
-    <p>{{builds.name}}</p>
+  <section data-id="{{builds.id}}" class="builds-list-container">
 
-    <h6>Build ID:</h6>
-    <p>{{builds.id}}</p>
+    <div class="builds-list-major">
+      <h6>Name:</h6>
+      <p>{{builds.name}}</p>
 
-    <h6>Description:</h6>
-    <p>{{builds.description}}</p>
+      <h6>Build ID:</h6>
+      <p>{{builds.id}}</p>
 
-    <h6>Budget:</h6>
-    <p>{{builds.budget}}</p>
+      <h6>Description:</h6>
+      <p>{{builds.description}}</p>
+    </div>
 
-    <h6>Processor:</h6>
-    <p>{{builds.cpu}}</p>
+    <div class="builds-list-minor">
+      <!-- <h6>Budget:</h6>
+      <p>{{builds.budget}}</p>
 
-    <h6>Graphics Card:</h6>
-    <p>{{builds.gpu}}</p>
+      <h6>Processor:</h6>
+      <p>{{builds.cpu}}</p>
 
-    <h6>Motherboard:</h6>
-    <p>{{builds.mobo}}</p>
+      <h6>Graphics Card:</h6>
+      <p>{{builds.gpu}}</p>
 
-    <h6>RAM:</h6>
-    <p>{{builds.ram}}</p>
+      <h6>Motherboard:</h6>
+      <p>{{builds.mobo}}</p>
 
-    <h6>Cooler:</h6>
-    <p>{{builds.cooler}}</p>
+      <h6>RAM:</h6>
+      <p>{{builds.ram}}</p>
 
-    <h6>Power Supply:</h6>
-    <p>{{builds.psu}}</p>
+      <h6>Cooler:</h6>
+      <p>{{builds.cooler}}</p>
 
-    <h6>Storage:</h6>
-    <p>{{builds.storage}}</p>
+      <h6>Power Supply:</h6>
+      <p>{{builds.psu}}</p>
 
-    <h6>Other:</h6>
-    <p>{{builds.other}}</p>
+      <h6>Storage:</h6>
+      <p>{{builds.storage}}</p>
 
-    <button class="btn btn-info update-button">Update</button>
+      <h6>Other:</h6>
+      <p>{{builds.other}}</p> -->
 
-    <button class="btn btn-danger delete-build">Delete</button>
+      <button class="btn btn-info update-button">Update</button>
+
+      <button class="btn btn-danger delete-build">Delete</button>
+    </div>
 
   </section>
 
