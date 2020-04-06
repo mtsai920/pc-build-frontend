@@ -6,6 +6,8 @@ const ui = require('./ui')
 
 const api = require('./api')
 
+// const store = require('../store')
+
 const logInBtn = function (event) {
   event.preventDefault()
   $('#log-in').show()
@@ -56,15 +58,6 @@ const onCreateBuild = function (event) {
     .catch(ui.createBuildFailure)
 }
 
-const onCreatePart = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log(data)
-  api.createPart(data)
-    .then(ui.createPartSuccessful)
-    .catch(ui.createPartFailure)
-}
-
 const onRetrieveBuilds = function (event) {
   event.preventDefault()
   api.retrieveBuilds()
@@ -74,15 +67,33 @@ const onRetrieveBuilds = function (event) {
 
 const onDeleteBuild = function (event) {
   event.preventDefault()
-  const id = $(event.target).data('id')
-  console.log(id)
-  api.deleteBuild(id)
-    .then(ui.deleteBuildSuccessful)
+  const data = $(event.target).closest('section').data('id')
+  api.deleteBuild(data)
+    .then(function () {
+      onRetrieveBuilds(event)
+    },
+    ui.deleteBuildSuccessful)
     .catch(ui.deleteBuildFailure)
 }
 
+const onUpdateBuild = function (event) {
+  event.preventDefault()
+}
+
+// const onRetrieveOne = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   console.log(data.buildId)
+//   api.retrieveOne(data.buildId)
+//     .then(ui.retrieveOneSuccessful)
+//     .catch(ui.retrieveOneFailure)
+// }
+
 const addHandlers = () => {
   $('#retrieve-builds').on('submit', onRetrieveBuilds)
+  $('.home-builds').on('click', '.delete-build', onDeleteBuild)
+  $('.home-builds').on('click', '.update-build', onUpdateBuild)
+  // $('#retrieve-one-build').on('submit', onRetrieveOne)
 }
 
 module.exports = {
@@ -93,8 +104,8 @@ module.exports = {
   logInBtn,
   createBtn,
   onCreateBuild,
-  onCreatePart,
   onRetrieveBuilds,
-  onDeleteBuild,
+  // onDeleteBuild,
+  // onRetrieveOne,
   addHandlers
 }

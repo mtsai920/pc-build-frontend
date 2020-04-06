@@ -52,28 +52,6 @@ const createBuild = function (data) {
   })
 }
 
-const retrieveParts = function (data) {
-  return $.ajax({
-    url: config.apiUrl + '/parts',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
-
-const createPart = function (data) {
-  return $.ajax({
-    url: config.apiUrl + '/parts',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
-
 const retrieveBuilds = function () {
   return $.ajax({
     url: config.apiUrl + '/builds',
@@ -86,7 +64,7 @@ const retrieveBuilds = function () {
 
 const deleteBuild = function (id) {
   return $.ajax({
-    url: config.apiUrl + '/builds/' + id,
+    url: config.apiUrl + `/builds/${id}`,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -94,14 +72,23 @@ const deleteBuild = function (id) {
   })
 }
 
+// const retrieveOne = function (id) {
+//   return $.ajax({
+//     url: config.apiUrl + `/builds/${id}`,
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
+
 module.exports = {
   signUp,
   logIn,
   changePassword,
   logOut,
   createBuild,
-  retrieveParts,
-  createPart,
   retrieveBuilds,
   deleteBuild
+  // retrieveOne
 }

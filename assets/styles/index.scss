@@ -1,12 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
 
-#login-btn {
-  display: block;
-  text-align: center;
+body {
+  padding-bottom: 100px;
 }
 
+// #login-btn {
+//   display: block;
+//   text-align: center;
+// }
+
 #log-in {
-  display: none;
   text-align: center;
 }
 
@@ -19,36 +22,81 @@
 }
 
 #log-out {
-  bottom: 10px;
+  display: none;
   left: 30px;
   padding: 10px;
   position: absolute;
 }
 
-#create-parts {
+#create-build-form {
   display: none;
 }
 
-.navbar {
-  padding: 45px;
+#retrieve-builds {
+  display: none;
 }
 
-.form-row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 25px;
-  width: auto;
+#delete-build {
+  display: none;
 }
 
-.col {
-  display: flex;
-  justify-content: center;
+#retrieve-one-build {
+  display: none;
   padding: 5px;
+}
+
+.navbar {
+  padding: 25px;
+}
+
+.navbar-brand {
+  font-size: 200%;
 }
 
 .copyright {
   bottom: 10px;
   position: absolute;
   right: 30px;
+}
+
+.fixed-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  // padding: 37.5px;
+}
+
+.message {
+  text-align: center;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.col {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.build-info-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 0;
+}
+
+.create-build-container {
+  display: flex;
+  justify-content: center;
+}
+
+.create-build-major {
+  padding: 60px 10px;
+}
+
+.create-build-minor {
+  padding: 10px;
 }

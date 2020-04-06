@@ -11,16 +11,16 @@ const logic = require('./logic/events.js')
 $(() => {
   // Auth buttons
   $('#sign-up').on('submit', logic.onSignUp)
-  $('#log-in').on('submit', logic.onLogIn)
+  $('#login').on('submit', logic.onLogIn)
   $('#change-password').on('submit', logic.onChangePassword)
   $('#log-out').on('submit', logic.onLogOut)
-  $('#login-btn').on('click', logic.logInBtn)
-  $('#create-btn').on('click', logic.createBtn)
+  // $('#login-btn').on('click', logic.logInBtn)
 
   // Build-related buttons
   $('#create-build-form').on('submit', logic.onCreateBuild)
   $('#create-part-form').on('submit', logic.onCreatePart)
-  $('#delete-build').on('submit', logic.onDeleteBuild)
+  // $('#delete-build').on('submit', logic.onDeleteBuild)
+  // $('#retrieve-one-build').on('submit', logic.onRetrieveOne)
 
   // Retrieve via Handlebars
   logic.addHandlers()

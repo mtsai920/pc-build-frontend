@@ -15,120 +15,143 @@
 
       <!-- Navigation Bar -->
 
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand">PC Build Tracker</a>
-        <!-- <a class="navbar-right">Build and Keep Track of your Ultimate PC.</a> -->
+        <a class="navbar-right">Build and Keep Track of your Ultimate PC.</a>
       </nav>
 
     <!-- Auth Information -->
 
-    <p class="message"></p>
+    <p class="other-message"></p>
 
-    <form id="sign-up">
-      <p id="sign-up-text">Sign Up</p>
-      <div class="form-row">
-        <div class="col">
+    <div class="auth-container">
+      <form id="sign-up">
+        <h5 id="sign-up-text">Sign Up</h5>
+          <div class="col col-sm">
+            <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+          </div>
+          <div class="col col-sm">
+            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+          </div>
+          <div class="col col-sm">
+            <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          </div>
+          <div class="col">
+            <input class="btn btn-primary" type="submit" value="Sign Up">
+          </div>
+      </form>
+
+      <form id="login">
+        <h5 id="login-text">Login</h5>
+        <div class="col col-sm">
           <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
         </div>
-        <div class="col">
+        <div class="col col-sm">
           <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
         </div>
         <div class="col">
-          <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input class="btn btn-success" type="submit" value="Login">
         </div>
-        <div class="col">
-          <input type="submit" value="Sign Up">
-          <!-- <button type="button" class="btn btn-primary">Primary</button> -->
-        </div>
-      </div>
-    </form>
-
-    <!-- <form id="sign-up">
-      <h4>Sign Up</h4>
-    <input type="text" name="credentials[email]" placeholder="email">
-    <input type="password" name="credentials[password]" placeholder="password">
-    <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
-    <input type="submit" value="Sign Up">
-    </form> -->
-
-    <div id="login-btn">
-      <button>Log In</button>
+      </form>
     </div>
-    <form id="log-in">
-      <h4>Log In</h4>
-      <input type="text" class="form-control" name="credentials[email]" placeholder="email">
-      <input type="password" class="form-control" name="credentials[password]" placeholder="password">
-      <input type="submit" value="Log In">
-    </form>
 
-    <form id="change-password">
-      <h4>Change Password</h4>
-      <input type="password" name="passwords[old]" placeholder="old password">
-      <input type="password" name="passwords[new]" placeholder="new password">
-      <input type="submit" value="Change password">
-    </form>
+    <p class="message"></p>
+
+    <!-- Build-related Buttons -->
+
+    <div class="build-info-container">
+
+      <!-- <form id="retrieve-one-build" class="form-inline">
+        <label class="sr-only" for="retrieve-one-build">View Build</label>
+          <input type="text" class="form-control" name="buildId" placeholder="Build ID">
+        <input class="btn btn-dark" type="submit" value="View Build">
+      </form> -->
+
+      <form id="retrieve-builds">
+        <input class="btn btn-dark" type="submit" value="See All Builds">
+      </form>
+
+      <form id="delete-build" class="form-inline">
+        <label class="sr-only" for="deleting-build">Delete</label>
+          <input type="text" class="form-control" name="build[buildid]" placeholder="Build ID">
+        <input class="btn btn-danger" type="submit" value="Delete Build">
+      </form>
+
+    </div>
 
     <!-- Homepage Info -->
 
-    <p class="home"></p>
+    <p class="home">
 
-    <div id="create-btn">
-      <button>Create New Build</button>
-    </div>
     <form id="create-build-form">
-      <input type="text" name="build[name]" placeholder="Build Name">
-      <input type="text" name="build[description]" placeholder="Build Description">
-      <input type="text" name="build[budget]" placeholder="Budget">
-      <input type="submit" value="Create Build">
-    </form>
-
-    <!-- Retrieve Builds -->
-
-    <form id="retrieve-builds">
-      <input type="submit" value="See All Builds">
+      <div class="create-build-container">
+        <div class="create-build-major">
+          <div class="form-group">
+            <label for="create-build-major">Build Name</label>
+            <input type="text" class="form-control" name="build[name]" placeholder="Build Name">
+          </div>
+          <div class="form-group">
+            <label for="create-build-major">Build Description</label>
+            <input type="text" class="form-control" name="build[description]" placeholder="Build Description">
+          </div>
+          <div class="form-group">
+            <label for="create-build-major">Budget</label>
+            <input type="text" class="form-control" name="build[budget]" placeholder="Budget">
+          </div>
+        </div>
+        <div class="create-build-minor">
+          <div class="col col-sm">
+            <input type="text" class="form-control" name="build[cpu]" placeholder="Processor">
+          </div>
+          <div class="col col-sm">
+            <input type="text" class="form-control" name="build[gpu]" placeholder="Graphics Card">
+          </div>
+          <div class="col col-sm">
+            <input type="text" class="form-control" name="build[motherboard]" placeholder="Motherboard">
+          </div>
+          <div class="col col-sm">
+            <input type="text" class="form-control" name="build[ram]" placeholder="Ram">
+          </div>
+          <div class="col col-sm">
+            <input type="text" class="form-control" name="build[cooler]" placeholder="Cooler">
+          </div>
+          <div class="col col-sm">
+            <input type="text" class="form-control" name="build[power_supply]" placeholder="Power Supply">
+          </div>
+          <div class="col col-sm">
+            <input type="text" class="form-control" name="build[storage]" placeholder="Storage">
+          </div>
+          <div class="col col-sm">
+            <input type="text" class="form-control" name="build[other]" placeholder="Other">
+          </div>
+          <div class="col">
+            <input class="btn btn-dark" type="submit" value="Create Build">
+          </div>
+        </div>
+      </div>
     </form>
 
     <div class="home-builds"></div>
 
-    <form id="delete-build">
-      <input type="text" name="deleteBuildId" placeholder="Build ID">
-      <input type="submit" value="Delete Build">
-    </form>
-
-    <!-- Parts Form -->
-
-    <p class="home-parts"></p>
-
-    <div id="create-parts">
-      <h4 id="create-parts-header">Add a New Part</h4>
-      <form id="create-part-form">
-        <input type="text" name="part[name]" placeholder="Part Name">
-        <input type="text" name="part[part_type]" placeholder="Part Type">
-        <input type="text" name="part[description]" placeholder="Part Description">
-        <input type="text" name="part[cost]" placeholder="Cost">
-        <input type="text" name="part[build_id]" placeholder="Build Number">
-        <input type="submit" value="Add Part">
-      </form>
-    </div>
-
-    <!-- <div id="retrieve-parts">
-      <form id=
-    </div> -->
-
-
     <!-- Footer -->
 
-    <footer>
-      <div class="bottom">
-        <form id="log-out">
-          <input type="submit" value="Log Out">
-        </form>
+    <nav class="navbar fixed-bottom navbar-light bg-light">
 
-        <div class="copyright">
-          <p>2020 | <a href="https://www.linkedin.com/in/meganktsai/">Megan Tsai</a></p>
-        </div>
+      <form id="log-out">
+        <input class="btn btn-secondary" type="submit" value="Log Out">
+      </form>
+
+      <form id="change-password" class="form-inline">
+        <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
+        <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+        <input class="btn btn-warning" type="submit" value="Change Password">
+      </form>
+
+      <div class="copyright">
+        <p>2020 | <a href="https://www.linkedin.com/in/meganktsai/">Megan Tsai</a></p>
       </div>
-    </footer>
+
+    </nav>
 
     </body>
 
