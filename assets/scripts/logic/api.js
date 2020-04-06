@@ -72,6 +72,17 @@ const deleteBuild = function (id) {
   })
 }
 
+const updateBuild = function (data, id) {
+  return $.ajax({
+    url: config.apiUrl + `/builds/${id}`,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 // const retrieveOne = function (id) {
 //   return $.ajax({
 //     url: config.apiUrl + `/builds/${id}`,
@@ -89,6 +100,7 @@ module.exports = {
   logOut,
   createBuild,
   retrieveBuilds,
-  deleteBuild
+  deleteBuild,
+  updateBuild
   // retrieveOne
 }

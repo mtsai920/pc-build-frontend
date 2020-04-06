@@ -76,23 +76,27 @@ const onDeleteBuild = function (event) {
     .catch(ui.deleteBuildFailure)
 }
 
-const onUpdateBuild = function (event) {
+const onUpdateButton = function (event) {
   event.preventDefault()
+  const data = $(event.target).closest('section').data('id')
+  ui.updateButtonSuccessful(data)
 }
 
-// const onRetrieveOne = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   console.log(data.buildId)
-//   api.retrieveOne(data.buildId)
-//     .then(ui.retrieveOneSuccessful)
-//     .catch(ui.retrieveOneFailure)
-// }
+const onUpdateBuild = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const id = $(event.target).data('id')
+  console.log(id)
+  api.updateBuild(data, id)
+    .then(ui.updateBuildSuccessful)
+    .catch(ui.updateBuildFailure)
+}
 
 const addHandlers = () => {
   $('#retrieve-builds').on('submit', onRetrieveBuilds)
   $('.home-builds').on('click', '.delete-build', onDeleteBuild)
-  $('.home-builds').on('click', '.update-build', onUpdateBuild)
+  $('.home-builds').on('click', '.update-button', onUpdateButton)
+  $('.home-builds').on('submit', '#update-build-form', onUpdateBuild)
   // $('#retrieve-one-build').on('submit', onRetrieveOne)
 }
 

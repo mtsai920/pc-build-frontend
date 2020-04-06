@@ -3,22 +3,21 @@
 const store = require('../store')
 
 // Handlebars Templates
-const homepageTemplate = require('../templates/homepage.handlebars')
+// const homepageTemplate = require('../templates/homepage.handlebars')
 const retrieveBuildsTemplate = require('../templates/retrieve-builds.handlebars')
+const updateBuildTemplate = require('../templates/update-build.handlebars')
 
 const signUpSuccess = function (data) {
-  const homepageHtml = homepageTemplate()
-  $('.message').text('Signed up successfully!')
-  $('.home').append(homepageHtml)
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  $('#message').text('Signed up successfully! Please login.')
   $('#sign-up').hide()
-  $('#login').hide()
-  $('#retrieve-builds').show()
-  $('#log-out').show()
-  $('#retrieve-one-build').show()
 }
 
 const signUpFailure = function () {
-  $('.message').text('Error when signing up')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  $('#message').text('Error when signing up')
 }
 
 const logInSuccess = function (data) {
@@ -31,22 +30,30 @@ const logInSuccess = function (data) {
   $('#retrieve-builds').show()
   $('#delete-build').show()
   $('#retrieve-one-build').show()
-  $('.message').text('Logged in!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  $('#message').text('Logged in!')
   store.user = data.user
 }
 
 const logInFailure = function (data) {
-  $('.message').text('Error when logging in')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  $('#message').text('Error when logging in')
 }
 
 const changePasswordSuccess = function () {
   const passText = document.getElementById('change-password')
   passText.reset()
-  $('.message').text('Password changed!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  $('#message').text('Password changed!')
 }
 
 const changePasswordFailure = function () {
-  $('.message').text('Error when changing password')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  $('#message').text('Error when changing password')
 }
 
 const logOutSuccess = function (data) {
@@ -58,24 +65,36 @@ const logOutSuccess = function (data) {
   $('#retrieve-one-build').hide()
   $('#delete-build').hide()
   $('#retrieve-builds').hide()
-  $('.message').text('Logged out successfully')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  $('#message').text('Logged out successfully')
 }
 
 const logOutFailure = function (data) {
-  $('.message').text('Logged out successfully')
-  console.log('failed to logout')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  $('#message').text('Failed to log out')
 }
 
 const createBuildSuccess = function () {
-  $('.message').text('Build added!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  $('#message').text('Build added!')
 }
 
 const createBuildFailure = function () {
-  $('.message').text('Failed to create build')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  $('#message').text('Failed to create build')
 }
 
 const retrieveBuildsSuccessful = function (data) {
-  $('.home-builds').text(`You have ${data.builds.length} builds`)
+  if (data.builds.length === 1) {
+    $('.home-builds').text('You have one build.')
+  } else {
+    $('.home-builds').text(`You have ${data.builds.length} builds.`)
+  }
+  store.builds = data.builds
   const retrieveBuildsHtml = retrieveBuildsTemplate({ builds: data.builds })
   $('.home-builds').append(retrieveBuildsHtml)
   // console.log(data)
@@ -85,6 +104,19 @@ const retrieveBuildsFailure = function (data) {
   console.log(data)
   console.log('failed to retrieve builds')
 }
+
+const updateButtonSuccessful = function (id) {
+  const selectBuild = store.builds.find(build => build.id === id)
+  const updateBuildHtml = updateBuildTemplate({ build: selectBuild })
+  $('#create-build-form').hide()
+  $('.home-builds').html(updateBuildHtml)
+}
+
+const updateBuildSuccessful = function (data) {
+  console.log('updated')
+}
+
+const updateBuildFailure = function () {}
 
 // const retrieveOneSuccessful = function (data) {
 //   $('.home-builds').append(
@@ -119,7 +151,10 @@ module.exports = {
   retrieveBuildsSuccessful,
   retrieveBuildsFailure,
   deleteBuildSuccessful,
-  deleteBuildFailure
+  deleteBuildFailure,
+  updateButtonSuccessful,
+  updateBuildSuccessful,
+  updateBuildFailure
   // retrieveOneSuccessful,
   // retrieveOneFailure
 }

@@ -55,7 +55,7 @@
       </form>
     </div>
 
-    <p class="message"></p>
+    <h5 id="message"></h5>
 
     <!-- Build-related Buttons -->
 
@@ -71,11 +71,11 @@
         <input class="btn btn-dark" type="submit" value="See All Builds">
       </form>
 
-      <form id="delete-build" class="form-inline">
+      <!-- <form id="delete-build" class="form-inline">
         <label class="sr-only" for="deleting-build">Delete</label>
           <input type="text" class="form-control" name="build[buildid]" placeholder="Build ID">
         <input class="btn btn-danger" type="submit" value="Delete Build">
-      </form>
+      </form> -->
 
     </div>
 
@@ -88,15 +88,15 @@
         <div class="create-build-major">
           <div class="form-group">
             <label for="create-build-major">Build Name</label>
-            <input type="text" class="form-control" name="build[name]" placeholder="Build Name">
+            <input type="text" class="form-control" name="build[name]" placeholder="Build Name" required>
           </div>
           <div class="form-group">
             <label for="create-build-major">Build Description</label>
-            <input type="text" class="form-control" name="build[description]" placeholder="Build Description">
+            <input type="text" class="form-control" name="build[description]" placeholder="Build Description" required>
           </div>
           <div class="form-group">
             <label for="create-build-major">Budget</label>
-            <input type="text" class="form-control" name="build[budget]" placeholder="Budget">
+            <input type="text" class="form-control" name="build[budget]" placeholder="Budget" required>
           </div>
         </div>
         <div class="create-build-minor">

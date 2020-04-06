@@ -1,5 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 
+$green: #228B22;
+$red: #B22222;
+
 body {
   padding-bottom: 100px;
 }
@@ -40,9 +43,19 @@ body {
   display: none;
 }
 
-#retrieve-one-build {
-  display: none;
-  padding: 5px;
+// #retrieve-one-build {
+//   display: none;
+//   padding: 5px;
+// }
+
+.success {
+  color: $green;
+  text-align: center;
+}
+
+.failure {
+  color: $red;
+  text-align: center;
 }
 
 .navbar {
@@ -63,10 +76,6 @@ body {
   display: flex;
   justify-content: space-evenly;
   // padding: 37.5px;
-}
-
-.message {
-  text-align: center;
 }
 
 .auth-container {
