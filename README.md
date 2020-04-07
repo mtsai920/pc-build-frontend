@@ -20,8 +20,8 @@ HTML, CSS, JavaScript, jQuery, Bootstrap, Handlebars, Sass, Ruby, Rails
 ### Wireframes and User Stories
 Wireframe can be found [here](https://imgur.com/a/YvTl85V)
 
-As a user, I want to be able to create builds from scratch.
-As a user, I want to be able to save builds halfway and come back to them.
-As a user, I want to be able to update previous builds.
-As a user, I want to be able to delete any builds I have.
-As a user, I want to be able to name or rename my builds at any time.
+- As a user, I want to be able to create builds from scratch.
+- As a user, I want to be able to save builds halfway and come back to them.
+- As a user, I want to be able to update previous builds.
+- As a user, I want to be able to delete any builds I have.
+- As a user, I want to be able to name or rename my builds at any time.

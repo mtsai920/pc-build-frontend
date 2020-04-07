@@ -110,9 +110,9 @@ $gray: #778899;
 
 .home-builds {
   display: flex;
-  flex-basis: 300px;
+  // flex-basis: 300px;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 // --------- Messaging --------- //

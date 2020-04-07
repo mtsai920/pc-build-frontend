@@ -159,6 +159,7 @@ const updateButtonSuccessful = function (id) {
   $('#create-build-form').hide()
   $('.create-button').show()
   $('.home-builds').html(updateBuildHtml)
+  $('#build-info-text').text('')
 }
 
 const updateBuildSuccessful = function (data) {
