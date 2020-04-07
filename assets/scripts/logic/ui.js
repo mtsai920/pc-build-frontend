@@ -97,10 +97,10 @@ const logOutSuccess = function (data) {
   $('#delete-build').hide()
   $('#retrieve-builds').hide()
   $('#update-build-form').hide()
-  $('#build-info-text').hide()
   $('.builds-list-container').hide()
   $('.create-button').hide()
   $('#message').text('')
+  $('#build-info-text').text('')
 }
 
 const logOutFailure = function (data) {
@@ -110,6 +110,8 @@ const logOutFailure = function (data) {
 }
 
 const createBuildSuccess = function () {
+  const buildText = document.getElementById('create-build-form')
+  buildText.reset()
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#message').text('Build added!')
@@ -127,8 +129,8 @@ const showCreateSuccessful = function () {
   $('#create-build-form').show()
   $('.create-button').hide()
   $('#update-build-form').hide()
-  // $('#build-info-text').text('')
-  // $('#message').text('')
+  $('#message').text('')
+  $('#build-info-text').text('')
 }
 
 const retrieveBuildsSuccessful = function (data) {
@@ -136,7 +138,7 @@ const retrieveBuildsSuccessful = function (data) {
   $('#build-info-text').addClass('neutral')
   if (data.builds.length === 1) {
     $('#build-info-text').text('You have one build.')
-  } if (data.builds.length === 0) {
+  } else if (data.builds.length === 0) {
     $('#build-info-text').text(`You haven't created any builds yet!`)
   } else {
     $('#build-info-text').text(`You have ${data.builds.length} builds.`)
@@ -176,10 +178,14 @@ const updateBuildFailure = function (data) {
 }
 
 const deleteBuildSuccessful = function () {
+  $('#build-info-text').removeClass()
+  $('#build-info-text').addClass('neutral')
   $('#build-info-text').text('Build deleted!')
 }
 
 const deleteBuildFailure = function () {
+  $('#build-info-text').removeClass()
+  $('#build-info-text').addClass('failure')
   $('#build-info-text').text('Unable to delete build.')
 }
 
