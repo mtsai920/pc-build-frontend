@@ -8,9 +8,14 @@ const api = require('./api')
 
 // const store = require('../store')
 
-const logInBtn = function (event) {
+const onAskLogin = function (event) {
   event.preventDefault()
-  $('#log-in').show()
+  ui.askLoginSuccess()
+}
+
+const onAskSignUp = function (event) {
+  event.preventDefault()
+  ui.askSignUpSucccess()
 }
 
 const onSignUp = function (event) {
@@ -44,15 +49,14 @@ const onLogOut = function (event) {
     .catch(ui.logOutFailure)
 }
 
-const createBtn = function (event) {
+const onShowCreate = function (event) {
   event.preventDefault()
-  $('#create').show()
+  ui.showCreateSuccessful()
 }
 
 const onCreateBuild = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.createBuild(data)
     .then(ui.createBuildSuccess)
     .catch(ui.createBuildFailure)
@@ -68,12 +72,14 @@ const onRetrieveBuilds = function (event) {
 const onDeleteBuild = function (event) {
   event.preventDefault()
   const data = $(event.target).closest('section').data('id')
-  api.deleteBuild(data)
-    .then(function () {
-      onRetrieveBuilds(event)
-    },
-    ui.deleteBuildSuccessful)
-    .catch(ui.deleteBuildFailure)
+  if (confirm('Are you sure you want to delete this build?')) {
+    api.deleteBuild(data)
+      .then(function () {
+        onRetrieveBuilds(event)
+      },
+      ui.deleteBuildSuccessful)
+      .catch(ui.deleteBuildFailure)
+  }
 }
 
 const onUpdateButton = function (event) {
@@ -86,7 +92,6 @@ const onUpdateBuild = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = $(event.target).data('id')
-  console.log(id)
   api.updateBuild(data, id)
     .then(ui.updateBuildSuccessful)
     .catch(ui.updateBuildFailure)
@@ -97,7 +102,6 @@ const addHandlers = () => {
   $('.home-builds').on('click', '.delete-build', onDeleteBuild)
   $('.home-builds').on('click', '.update-button', onUpdateButton)
   $('.home-builds').on('submit', '#update-build-form', onUpdateBuild)
-  // $('#retrieve-one-build').on('submit', onRetrieveOne)
 }
 
 module.exports = {
@@ -105,11 +109,10 @@ module.exports = {
   onLogIn,
   onChangePassword,
   onLogOut,
-  logInBtn,
-  createBtn,
+  onShowCreate,
   onCreateBuild,
   onRetrieveBuilds,
-  // onDeleteBuild,
-  // onRetrieveOne,
+  onAskLogin,
+  onAskSignUp,
   addHandlers
 }

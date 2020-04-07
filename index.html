@@ -2,6 +2,10 @@
 <html>
     <head>
       <title>PC Build Tracker</title>
+
+      <!-- Fonts for Navbar -->
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -15,9 +19,9 @@
 
       <!-- Navigation Bar -->
 
-      <nav class="navbar navbar-dark bg-dark">
+      <nav class="navbar navbar-light" style="background-color: #4682B4;">
         <a class="navbar-brand">PC Build Tracker</a>
-        <a class="navbar-right">Build and Keep Track of your Ultimate PC.</a>
+        <a class="navbar-right">Build and Keep Track of your Ultimate PC</a>
       </nav>
 
     <!-- Auth Information -->
@@ -26,62 +30,66 @@
 
     <div class="auth-container">
       <form id="sign-up">
-        <h5 id="sign-up-text">Sign Up</h5>
+        <h3 id="sign-up-text">Sign Up</h3>
           <div class="col col-sm">
-            <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+            <input type="text" class="form-control form-control-lg" name="credentials[email]" placeholder="Email">
           </div>
           <div class="col col-sm">
-            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+            <input type="password" class="form-control form-control-lg" name="credentials[password]" placeholder="Password">
           </div>
           <div class="col col-sm">
-            <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="password" class="form-control form-control-lg" name="credentials[password_confirmation]" placeholder="Confirm Password">
           </div>
           <div class="col">
-            <input class="btn btn-primary" type="submit" value="Sign Up">
+            <input class="btn btn-primary btn-lg" type="submit" value="Sign Up">
           </div>
       </form>
 
       <form id="login">
-        <h5 id="login-text">Login</h5>
+        <h3 id="login-text">Login</h3>
         <div class="col col-sm">
-          <input type="text" class="form-control" name="credentials[email]" placeholder="Email">
+          <input type="text" class="form-control form-control-lg" name="credentials[email]" placeholder="Email">
         </div>
         <div class="col col-sm">
-          <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+          <input type="password" class="form-control form-control-lg" name="credentials[password]" placeholder="Password">
         </div>
         <div class="col">
-          <input class="btn btn-success" type="submit" value="Login">
+          <input class="btn btn-success btn-lg" type="submit" value="Login">
         </div>
       </form>
     </div>
 
+    <div class="ask-login">
+      <h5>Already signed up?</h5>
+      <button type="button" class="btn btn-success ask-login-button">Login</button>
+    </div>
+
+    <div class="ask-signup">
+      <h5>Need to sign up?</h5>
+      <button type="button" class="btn btn-primary ask-signup-button">Sign Up</button>
+    </div>
+
     <h5 id="message"></h5>
 
-    <!-- Build-related Buttons -->
+    <h5 id="build-info-text"></h5>
+
+    <!-- Build -->
 
     <div class="build-info-container">
 
-      <!-- <form id="retrieve-one-build" class="form-inline">
-        <label class="sr-only" for="retrieve-one-build">View Build</label>
-          <input type="text" class="form-control" name="buildId" placeholder="Build ID">
-        <input class="btn btn-dark" type="submit" value="View Build">
-      </form> -->
+      <div class="create-button">
+        <button type="button" class="btn btn-primary">Create a Build</button>
+      </div>
 
       <form id="retrieve-builds">
         <input class="btn btn-dark" type="submit" value="See All Builds">
       </form>
 
-      <!-- <form id="delete-build" class="form-inline">
-        <label class="sr-only" for="deleting-build">Delete</label>
-          <input type="text" class="form-control" name="build[buildid]" placeholder="Build ID">
-        <input class="btn btn-danger" type="submit" value="Delete Build">
-      </form> -->
-
     </div>
 
-    <!-- Homepage Info -->
+    <!-- Create Build Form -->
 
-    <p class="home">
+    <p class="home"></p>
 
     <form id="create-build-form">
       <div class="create-build-container">
@@ -95,7 +103,7 @@
             <input type="text" class="form-control" name="build[description]" placeholder="Build Description">
           </div>
           <div class="form-group">
-            <label for="create-build-major">Budget</label>
+            <label for="create-build-major">Budget ($)</label>
             <input type="text" class="form-control" name="build[budget]" placeholder="Budget">
           </div>
         </div>
@@ -131,7 +139,6 @@
       </div>
     </form>
 
-    <h6 id="build-info-text"></h6>
     <div class="home-builds"></div>
 
     <!-- Footer -->

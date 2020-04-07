@@ -14,11 +14,13 @@ $(() => {
   $('#login').on('submit', logic.onLogIn)
   $('#change-password').on('submit', logic.onChangePassword)
   $('#log-out').on('submit', logic.onLogOut)
+  $('.ask-login-button').on('click', logic.onAskLogin)
+  $('.ask-signup-button').on('click', logic.onAskSignUp)
 
   // Build-related buttons
   $('#create-build-form').on('submit', logic.onCreateBuild)
   $('#create-part-form').on('submit', logic.onCreatePart)
-  // $('#delete-build').on('submit', logic.onDeleteBuild)
+  $('.create-button').on('click', logic.onShowCreate)
 
   // Retrieve via Handlebars
   logic.addHandlers()

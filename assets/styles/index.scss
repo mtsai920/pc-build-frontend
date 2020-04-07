@@ -3,26 +3,18 @@
 $green: #228B22;
 $red: #B22222;
 $black: #000000;
+$gray: #778899;
 
-body {
-  padding-bottom: 100px;
+// --------- Auth Information --------- //
+
+#sign-up {
+  padding: 30px 0 80px 0;
 }
 
-// #login-btn {
-//   display: block;
-//   text-align: center;
-// }
-
-#log-in {
+#login {
+  display: none;
+  padding: 30px 0 80px 0;
   text-align: center;
-}
-
-#change-password {
-  display: none;
-}
-
-#create {
-  display: none;
 }
 
 #log-out {
@@ -30,6 +22,31 @@ body {
   left: 30px;
   padding: 10px;
   position: absolute;
+}
+
+#change-password {
+  display: none;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.ask-login {
+  text-align: center;
+}
+
+.ask-signup {
+  display: none;
+  text-align: center;
+}
+
+// --------- Build Overview --------- //
+
+#create {
+  display: none;
 }
 
 #create-build-form {
@@ -40,67 +57,42 @@ body {
   display: none;
 }
 
-#delete-build {
+.create-button {
   display: none;
-}
-
-// #retrieve-one-build {
-//   display: none;
-//   padding: 5px;
-// }
-
-.success {
-  color: $green;
+  padding: 0 15px;
   text-align: center;
 }
 
-.failure {
-  color: $red;
-  text-align: center;
-}
-
-.neutral {
-  color: $black;
-  text-align: center;
-}
-
-.navbar {
-  padding: 25px;
-}
-
-.navbar-brand {
-  font-size: 200%;
-}
-
-.copyright {
-  bottom: 10px;
-  position: absolute;
-  right: 30px;
-}
-
-.fixed-bottom {
-  display: flex;
-  justify-content: space-evenly;
-  // padding: 37.5px;
-}
-
-.auth-container {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-}
-
-.col {
-  align-items: center;
+.update-build-container {
   display: flex;
   justify-content: center;
-  padding: 5px;
+}
+
+.builds-list-container {
+  border: 2px solid $gray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+}
+
+.builds-list-major {
+  flex-direction: column;
+  padding: 10px;
+}
+
+.builds-list-minor {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
 .build-info-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 10px 0;
 }
 
 .create-build-container {
@@ -118,17 +110,66 @@ body {
 
 .home-builds {
   display: flex;
+  flex-basis: 300px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.builds-list-major {
+// --------- Messaging --------- //
+
+.success {
+  color: $green;
   padding: 10px;
+  text-align: center;
 }
 
-.builds-list-container {
-  border: 2px solid $black;
-  border-radius: 8px;
+.failure {
+  color: $red;
+  padding: 10px;
+  text-align: center;
+}
+
+.neutral {
+  color: $black;
+  text-align: center;
+}
+
+// --------- Misc. --------- //
+
+body {
+  padding-bottom: 100px;
+}
+
+.navbar-light {
+  padding: 25px;
+}
+
+.navbar-brand {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 200%;
+}
+
+.navbar-right {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 125%;
+  font-style: italic;
+}
+
+.copyright {
+  bottom: 10px;
+  position: absolute;
+  right: 30px;
+}
+
+.fixed-bottom {
   display: flex;
-  flex-direction: row;
+  justify-content: space-evenly;
+  // padding: 37.5px;
+}
+
+.col {
+  align-items: center;
+  display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 5px;
 }
