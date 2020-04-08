@@ -72,14 +72,12 @@ const onRetrieveBuilds = function (event) {
 const onDeleteBuild = function (event) {
   event.preventDefault()
   const data = $(event.target).closest('section').data('id')
-  if (confirm('Are you sure you want to delete this build?')) {
-    api.deleteBuild(data)
-      .then(function () {
-        onRetrieveBuilds(event)
-      },
-      ui.deleteBuildSuccessful)
-      .catch(ui.deleteBuildFailure)
-  }
+  api.deleteBuild(data)
+    .then(function () {
+      onRetrieveBuilds(event)
+    },
+    ui.deleteBuildSuccessful)
+    .catch(ui.deleteBuildFailure)
 }
 
 const onUpdateButton = function (event) {
