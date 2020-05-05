@@ -12,9 +12,6 @@ const signUpSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#message').text('Signed up successfully! Please login.')
-  $('#sign-up').hide()
-  $('.ask-login').hide()
-  $('#login').show()
 }
 
 const signUpFailure = function () {

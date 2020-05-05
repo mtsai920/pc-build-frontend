@@ -1,11 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
 
-$green: #228B22;
-$red: #B22222;
-$black: #000000;
+$green: #228b22;
+$red: #b22222;
+$black: #000;
 $gray: #778899;
 
 // --------- Auth Information --------- //
+
+* {
+  font-family: 'Barlow', sans-serif;
+}
 
 #sign-up {
   padding: 30px 0 80px 0;
@@ -74,6 +78,7 @@ $gray: #778899;
   display: flex;
   flex-direction: column;
   margin: 10px;
+  max-width: 300px;
   padding: 10px;
   width: 300px;
 }
@@ -87,6 +92,10 @@ $gray: #778899;
   display: flex;
   justify-content: space-evenly;
   text-align: center;
+}
+
+.builds-list-text {
+  text-decoration: underline;
 }
 
 .build-info-container {

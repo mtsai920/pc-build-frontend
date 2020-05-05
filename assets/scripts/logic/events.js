@@ -58,6 +58,9 @@ const onCreateBuild = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.createBuild(data)
+    .then(function () {
+      onRetrieveBuilds(event)
+    })
     .then(ui.createBuildSuccess)
     .catch(ui.createBuildFailure)
 }

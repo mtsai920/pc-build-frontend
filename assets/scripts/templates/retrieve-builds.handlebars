@@ -3,13 +3,13 @@
   <section data-id="{{builds.id}}" class="builds-list-container">
 
     <div class="builds-list-major">
-      <h6>Name:</h6>
+      <h6 class="builds-list-text">Name:</h6>
       <p>{{builds.name}}</p>
 
-      <h6>Description:</h6>
-      <p>{{builds.description}}</p>
+      <h6 class="builds-list-text">Description:</h6>
+      <p>{{limit builds.description 25}}</p>
 
-      <h6>Budget:</h6>
+      <h6 class="builds-list-text">Budget:</h6>
       <p>{{builds.budget}}</p>
     </div>
 
