@@ -135,7 +135,7 @@ const retrieveBuildsSuccessful = function (data) {
   $('#build-info-text').removeClass()
   $('#build-info-text').addClass('neutral')
   if (data.builds.length === 1) {
-    $('#build-info-text').text('You have one build.')
+    $('#build-info-text').text('You have 1 build.')
   } else if (data.builds.length === 0) {
     $('#build-info-text').text(`You haven't created any builds yet!`)
   } else {
@@ -168,6 +168,8 @@ const updateBuildSuccessful = function (data) {
   $('#build-info-text').addClass('success')
   $('#build-info-text').text('Build updated!')
   $('#update-form').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
 }
 
 const updateBuildFailure = function (data) {

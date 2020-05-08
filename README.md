@@ -1,6 +1,6 @@
 ## PC Build Tracker Client
 
-The purpose of this app is to create, update, view, and manage as many PC builds as you want. Although there are better and more well-established sites that already do this, I was excited to create this site because building computers is something I'm really passionate about. I also built the backend of this project, and its repo can be found [here](https://github.com/mtsai920/pc-build-api). The deployed site can be found [here](https://mtsai920.github.io/pc-build-client/) and backend API can be found [here](https://rhubarb-custard-80181.herokuapp.com/). 
+The purpose of this app is to create, update, view, and manage as many PC builds as you want. Although there are better and more well-established sites that already do this, I was excited to create this site because building computers is something I'm really passionate about. I also built the backend of this project, and its repo can be found [here](https://github.com/mtsai920/pc-build-api). The deployed site can be found [here](https://mtsai920.github.io/pc-build-client/) and backend API can be found [here](https://rhubarb-custard-80181.herokuapp.com/).
 
 This project, looking back, was pretty fun, but indeed challenging. Building a fullstack application from scratch with almost no starter code was really exciting, and I was able to pick a topic that I was interested in. I encountered plenty of obstacles along the way but ultimately, I feel like I learned a lot from the entire experience.
 
@@ -10,9 +10,9 @@ Once I simplified my tables and backend logic, connecting that to my frontend wa
 
 There are still a few things I want to fix, mainly:
 - Really getting the CSS to another level
-- Using modals for my forms
 - Adding more columns in the backend for peripherals, cases, etc
 - Seeding in my own parts so users can choose from a selection
+- The "Update" modal behavior is not perfect
 
 ### Technologies used:
 HTML, CSS, JavaScript, jQuery, Bootstrap, Handlebars, Sass, Ruby, Rails
