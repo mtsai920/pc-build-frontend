@@ -95,6 +95,9 @@ const onUpdateBuild = function (event) {
   const id = $(event.target).data('id')
   api.updateBuild(data, id)
     .then(ui.updateBuildSuccessful)
+    .then(function () {
+      onRetrieveBuilds(event)
+    })
     .catch(ui.updateBuildFailure)
 }
 

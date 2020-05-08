@@ -167,6 +167,7 @@ const updateBuildSuccessful = function (data) {
   $('#build-info-text').removeClass()
   $('#build-info-text').addClass('success')
   $('#build-info-text').text('Build updated!')
+  $('#update-form').modal('hide')
 }
 
 const updateBuildFailure = function (data) {

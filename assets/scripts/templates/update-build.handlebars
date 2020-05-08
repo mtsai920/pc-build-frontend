@@ -1,47 +1,62 @@
-<form id="update-build-form" data-id="{{build.id}}">
-  <div class="update-build-container">
-    <div class="create-build-major">
-      <div class="form-group">
-        <label for="create-build-major">Build Name</label>
-        <input type="text" class="form-control" name="build[name]" placeholder="Build Name" value="{{build.name}}">
+<div class="modal" id="update-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Build</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="form-group">
-        <label for="create-build-major">Build Description</label>
-        <input type="text" class="form-control" name="build[description]" placeholder="Build Description" value="{{build.description}}">
-      </div>
-      <div class="form-group">
-        <label for="create-build-major">Budget ($)</label>
-        <input type="text" class="form-control" name="build[budget]" placeholder="Budget" value="{{build.budget}}">
-      </div>
-    </div>
-    <div class="create-build-minor">
-      <div class="col col-sm">
-        <input type="text" class="form-control" name="build[cpu]" placeholder="Processor" value="{{build.cpu}}">
-      </div>
-      <div class="col col-sm">
-        <input type="text" class="form-control" name="build[gpu]" placeholder="Graphics Card" value="{{build.gpu}}">
-      </div>
-      <div class="col col-sm">
-        <input type="text" class="form-control" name="build[motherboard]" placeholder="Motherboard" value="{{build.motherboard}}">
-      </div>
-      <div class="col col-sm">
-        <input type="text" class="form-control" name="build[ram]" placeholder="Ram" value="{{build.ram}}">
-      </div>
-      <div class="col col-sm">
-        <input type="text" class="form-control" name="build[cooler]" placeholder="Cooler" value="{{build.cooler}}">
-      </div>
-      <div class="col col-sm">
-        <input type="text" class="form-control" name="build[power_supply]" placeholder="Power Supply" value="{{build.power_supply}}">
-      </div>
-      <div class="col col-sm">
-        <input type="text" class="form-control" name="build[storage]" placeholder="Storage" value="{{build.storage}}">
-      </div>
-      <div class="col col-sm">
-        <input type="text" class="form-control" name="build[other]" placeholder="Other" value="{{build.other}}">
-      </div>
-      <div class="col">
-        <button type="submit" class="btn btn-info update-build">Update Build</button>
+      <div class="modal-body">
+        <form id="update-build-form" data-id="{{build.id}}">
+          <div class="update-build-container">
+            <div class="create-build-major">
+              <div class="form-group">
+                <label for="create-build-major">Build Name</label>
+                <input type="text" class="form-control" name="build[name]" placeholder="Build Name" value="{{build.name}}">
+              </div>
+              <div class="form-group">
+                <label for="create-build-major">Build Description</label>
+                <input type="text" class="form-control" name="build[description]" placeholder="Build Description" value="{{build.description}}">
+              </div>
+              <div class="form-group">
+                <label for="create-build-major">Budget ($)</label>
+                <input type="text" class="form-control" name="build[budget]" placeholder="Budget" value="{{build.budget}}">
+              </div>
+            </div>
+            <div class="create-build-minor">
+              <div class="col col-sm">
+                <input type="text" class="form-control" name="build[cpu]" placeholder="Processor" value="{{build.cpu}}">
+              </div>
+              <div class="col col-sm">
+                <input type="text" class="form-control" name="build[gpu]" placeholder="Graphics Card" value="{{build.gpu}}">
+              </div>
+              <div class="col col-sm">
+                <input type="text" class="form-control" name="build[motherboard]" placeholder="Motherboard" value="{{build.motherboard}}">
+              </div>
+              <div class="col col-sm">
+                <input type="text" class="form-control" name="build[ram]" placeholder="Ram" value="{{build.ram}}">
+              </div>
+              <div class="col col-sm">
+                <input type="text" class="form-control" name="build[cooler]" placeholder="Cooler" value="{{build.cooler}}">
+              </div>
+              <div class="col col-sm">
+                <input type="text" class="form-control" name="build[power_supply]" placeholder="Power Supply" value="{{build.power_supply}}">
+              </div>
+              <div class="col col-sm">
+                <input type="text" class="form-control" name="build[storage]" placeholder="Storage" value="{{build.storage}}">
+              </div>
+              <div class="col col-sm">
+                <input type="text" class="form-control" name="build[other]" placeholder="Other" value="{{build.other}}">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-info update-build">Update Build</button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-</form>
+</div>
