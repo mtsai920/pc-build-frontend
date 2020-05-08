@@ -113,6 +113,7 @@ const createBuildSuccess = function () {
   $('#message').addClass('success')
   $('#message').text('Build added!')
   $('#build-info-text').text('')
+  $('#create-build').modal('hide')
 }
 
 const createBuildFailure = function () {
@@ -124,7 +125,7 @@ const createBuildFailure = function () {
 
 const showCreateSuccessful = function () {
   $('#create-build-form').show()
-  $('.create-button').hide()
+  // $('.create-button').hide()
   $('#update-build-form').hide()
   $('#message').text('')
   $('#build-info-text').text('')
